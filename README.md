@@ -1,5 +1,4 @@
-# Generic Logs
-
+# Generic Logs <a class="github-button" href="https://github.com/yosseferrazik/generic-logs/packages" data-icon="octicon-package" data-size="large" aria-label="Install this package yosseferrazik/generic-logs on GitHub">Install this package</a>
 
 Generic-logs es un paquete para NodeJS que mejora ligeramente la funcion `console.log` haciendola algo mas visual y intiutiva ofreciendo varias funciones 
 ![](https://i.imgur.com/skpqoRy.png)
