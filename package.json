@@ -1,26 +1,21 @@
 {
-    "name": "generic-logs",
-    "version": "1.0.0",
-    "description": "Un paquete que modifica visualmente los registros para facilitar la resolución de errores ",
-    "main": "index.js",
-    "scripts": {
-      "test": "node index.js && exit 1"
-    },
-    "keywords": [],
-    "author": "Yossef Errazik",
-    "license": "GPL-3.0-or-later",
-    "dependencies": {
-      "@types/node": "^18.0.6",
-      "node-color-log": "^10.0.2",
-      "node-fetch": "^3.3.1"
-    },
-    "devDependencies": {},
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/yosseferrazik/generic-logs.git"
-    },
-    "bugs": {
-      "url": "https://github.com/yosseferrazik/generic-logs/issues"
-    },
-    "homepage": "https://github.com/yosseferrazik/generic-logs#readme"
-  }
+  "name": "generic-logs",
+  "version": "2.5.0",
+  "description": "Un paquete que modifica visualmente los registros para facilitar la resolución de errores ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js && exit 1",
+    "start": "node index.js "
+  },
+  "keywords": [],
+  "author": "Yossef Errazik",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosseferrazik/generic-logs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yosseferrazik/generic-logs/issues"
+  },
+  "homepage": "https://github.com/yosseferrazik/generic-logs#readme"
+}
