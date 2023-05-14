@@ -2,135 +2,89 @@
 # Generic Logs 
 Generic-logs es un paquete para NodeJS que mejora ligeramente la funcion `console.log` haciendola algo mas visual y intiutiva ofreciendo varias funciones 
 ![](https://i.imgur.com/skpqoRy.png)
-## Antes de empezar
-### **Instalar el paquete** 
 
-```
-npm install generic-logs@latest --save
-```
-### **Importarlo** 
 
+
+## Instalación
+
+Puedes instalar el paquete a través de npm utilizando el siguiente comando:
+
+```bash
+npm install generic-logs
+```
+## Uso
+
+Ejemplo :
 ```js
 const log = require('generic-logs');
+
+log({ text: 'Hola', styles: [color.blue , style.bold , style.underscore ] });
 ```
-### **Ejemplo**
+## Documentacion
+### `log(options)`
+La función log permite enviar un mensaje en la consola con estilos personalizados.
+
+**Parámetros:** Options: Un objeto con las siguientes propiedades:
+- Text (string): El texto del mensaje.
+- Styles (array): Un array con los estilos.
 ```js
-const log = require('generic-logs');
-
-log.info("Esto es un mensaje informativo");
+log({ text: 'Hola', styles: [color.yellow, style.underscore] });
 ```
->![xd](https://i.imgur.com/RGQyfeP.png)
+## Logs Predefinidos
+El paquete también proporciona algunas funciones para logs predefinidos que pueden ser útiles:
 
-# Documentacion
-El paquete consta actualmente de 7 funciones nuevas para mejorar visualmente tu logs.
-- `warn()`
-- `info()`
-- `debug()`
-- `error()`
-- `success()`
-- `startLoader()` y `stopLoader()`
-- `separator()`
-
-## Warn `.warn(texto)`
+### **INFO** `info(message)`
+Muestra un mensaje de información.
 ```js
-// Uso basico
-
-log.warn(mensaje)
-
-
-// Loggear multiples objetos
-log.warn(obj1, obj2, obj3, obj4...)
+log.info('Información importante');
 ```
-## Info `.info(texto)`
+### **WARNING** `warning(message)`
+Muestra un mensaje de advertencia.
 ```js
-// Uso basico
-
-log.info(mensaje)
-
-
-// Loggear multiples objetos
-log.info(obj1, obj2, obj3, obj4...)
+log.warning('Advertencia');
 ```
-## Error `.error(texto)`
+### **SUCCESS** `success(message)`
+Muestra un mensaje de exito
 ```js
-// Uso basico
-
-log.error(mensaje)
-
-
-// Loggear multiples objetos
-log.error(obj1, obj2, obj3, obj4...)
+log.success('¡¡Eureka!!');
 ```
-## Debug `.debug(texto)`
+### **ERROR** `error(message)`
+Muestra un mensaje de error
 ```js
-// Uso basico
-
-log.warn(mensaje)
-
-
-// Loggear multiples objetos
-log.warn(obj1, obj2, obj3, obj4...)
+log.success('Error encontrado');
 ```
 
-## Success `.success(texto)`
-```js
-// Uso basico
+### **SEPARATOR** `separator(char, length)`
 
-log.success(mensaje)
+Separator es una funcion que crea un separador visual en la consola.
 
-
-// Loggear multiples objetos
-log.success(obj1, obj2, obj3, obj4...)
-```
-## Separador `.separator(color,estilo)`
-*Es importante que este en formato de string*
-### Colores (por defecto es azul)
-- Rojo : `"red"`
-- Azul : `"blue"`
-- Cyan : `"cyan"`
-- Magenta : `"magenta"`
-- Amarillo : `"yellow"`
-- Negro : `"black"`
-- Verde : `"green"`
-- Blanco : `"white"`
-### Estilos (por defecto son quadrados)
-- Linea : `"line"`
-- Blanco&Negro : `"chess"`
-- Guión : `"script"`
-- Triangulos : `"triangles"`
-- Cadenas : `"chain"`
-
+**Parámetros**
+- Char (opcional, cadena): El carácter utilizado para crear el separador. Por defecto es '-'.
+- Length (opcional, número): La longitud del separador. Por defecto es 10.
+Ejemplo
 
 ```js
-// Estilos
-
-log.separator("","triangles")
-// △▽△▽△▽△▽△▽△▽△▽△▽△▽△▽△
-
-log.separator("","script")
-// ----------------------------------
-
-log.separator("","line")
-// ┣━━━━━━━━━━━━━━━━━━━━┫
-
-log.separator("","chess")
-// ▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚▚
-
-log.separator("","chain")
-//  ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
-
-log.separator()
-// ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+log.separator(); // Separador predeterminado
+log.separator('*', 20); // Separador personalizado con longitud 20 y carácter '*'
+log.separator('~', 15); // Separador personalizado con longitud 15 y carácter '~'
 ```
 
-## Loading `.startLoader(texto)` y `.stopLoader()`
-Con `.startLoader` inicias un "bucle" en el que sale un mensaje y con `.stopLoader()` frenas el bucle . 
-```js
-// inicias
-log.startLoader('Hola')
+# Contribución
+Si deseas contribuir a este proyecto, puedes seguir los pasos a continuación:
 
-// acabas
-log.stopLoader()
-```
-![](https://i.imgur.com/kcAjRzF.gif)
-
+- Haz un fork del repositorio.
+- Crea una rama para tu nueva función o mejora:
+  ``` bash
+  git checkout -b mi-nueva-funcion.
+  ```
+- Realiza los cambios necesarios y realiza los commits:
+  ```bash
+  git commit -m 'Añadir mi nueva función'.
+  ```
+- Envía tus cambios al repositorio remoto:
+  ```bash
+  git push origin mi-nueva-funcion.
+  ```
+**Abre una pull request en GitHub.**
+# Licencia
+Este proyecto está licenciado bajo la  GENERAL PUBLIC LICENSE. Para más detalles, consulta el archivo LICENSE.
