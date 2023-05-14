@@ -1,10 +1,8 @@
+# GENERIC-LOGS
 
-# Generic Logs 
-Generic-logs es un paquete para NodeJS que mejora ligeramente la funcion `console.log` haciendola algo mas visual y intiutiva ofreciendo varias funciones 
-![](https://i.imgur.com/skpqoRy.png)
+Generic-logs es un paquete para NodeJS que mejora ligeramente la funcion `console.log` haciendola algo mas visual y intiutiva ofreciendo varias funciones
 
-
-
+![](https://i.imgur.com/cfGdBDr.png)
 ## Instalación
 
 Puedes instalar el paquete a través de npm utilizando el siguiente comando:
@@ -13,6 +11,14 @@ Puedes instalar el paquete a través de npm utilizando el siguiente comando:
 npm install generic-logs
 ```
 ## Uso
+
+Ejemplo :
+```js
+const log = require('generic-logs');
+
+log({ text: 'Hola', styles: [color.blue , style.bold , style.underscore ] });
+```
+## Documentacion
 ### Lista de estilos 
 
 #### **style**
@@ -47,13 +53,6 @@ npm install generic-logs
 - blue
 
 
-Ejemplo :
-```js
-const log = require('generic-logs');
-
-log({ text: 'Hola', styles: [color.blue , style.bold , style.underscore ] });
-```
-## Documentacion
 ### `log(options)`
 La función log permite enviar un mensaje en la consola con estilos personalizados.
 
@@ -66,28 +65,28 @@ log({ text: 'Hola', styles: [color.yellow, style.underscore] });
 ## Logs Predefinidos
 El paquete también proporciona algunas funciones para logs predefinidos que pueden ser útiles:
 
-### **INFO** `info(message)`
+## **INFO** `info(message)`
 Muestra un mensaje de información.
 ```js
 log.info('Información importante');
 ```
-### **WARNING** `warning(message)`
+## **WARNING** `warning(message)`
 Muestra un mensaje de advertencia.
 ```js
 log.warning('Advertencia');
 ```
-### **SUCCESS** `success(message)`
+## **SUCCESS** `success(message)`
 Muestra un mensaje de exito
 ```js
 log.success('¡¡Eureka!!');
 ```
-### **ERROR** `error(message)`
+## **ERROR** `error(message)`
 Muestra un mensaje de error
 ```js
 log.error('Error encontrado');
 ```
 
-### **SEPARATOR** `separator(char, length)`
+## **SEPARATOR** `separator(char, length)`
 
 Separator es una funcion que crea un separador visual en la consola.
 
