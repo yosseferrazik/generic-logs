@@ -84,7 +84,7 @@ log.success('¡¡Eureka!!');
 ### **ERROR** `error(message)`
 Muestra un mensaje de error
 ```js
-log.success('Error encontrado');
+log.error('Error encontrado');
 ```
 
 ### **SEPARATOR** `separator(char, length)`
