@@ -13,6 +13,39 @@ Puedes instalar el paquete a través de npm utilizando el siguiente comando:
 npm install generic-logs
 ```
 ## Uso
+### Lista de estilos 
+
+#### **style**
+- reset
+- bold
+- dim
+- italic
+- underscore
+- reverse
+- backoneline
+- strikethrough
+- cleanthisline
+
+#### **bg** (background)
+- black
+- red
+- green
+- yellow
+- blue
+- magenta
+- cyan
+- white
+
+#### **color**
+- black
+- red
+- yellow
+- green
+- white
+- magenta
+- cyan
+- blue
+
 
 Ejemplo :
 ```js
