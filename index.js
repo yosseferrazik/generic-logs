@@ -1,5 +1,9 @@
 // "ㅤ"
-const dayjs = require('dayjs');
+var date1 = new Date;
+var minutes = date1.getMinutes();
+var hour = date1.getHours();
+
+const actual = `${hour}:${minutes}`
 
 const style = {
   reset: "\x1b[0m",
@@ -35,9 +39,7 @@ const color = {
   white: "\x1b[37m",
 };
 
-const formatTime = (date) => {
-  return dayjs(date).format('HH:mm');
-};
+
 
 const applyStyles = (text, styles) => {
   const combinedStyles = styles.join('');
@@ -45,25 +47,24 @@ const applyStyles = (text, styles) => {
 };
 
 const log = ({ text, styles }) => {
-  const formattedTime = formatTime(new Date());
   const formattedText = applyStyles(text, styles);
-  console.log(`[${formattedTime}] ${formattedText}${style.reset}`);
+  console.log(`[${actual}] ${formattedText}${style.reset}`);
 };
 
 const info = (message) => {
-  log({ text: `INFO 〉 ${message}`, styles: [color.blue, style.bold] });
+  log({ text: `INFO 〉 ${message}`, styles: [color.blue] });
 };
 
 const success = (message) => {
-  log({ text: `SUCCESS 〉 ${message}`, styles: [color.green, style.bold] });
+  log({ text: `SUCCESS 〉 ${message}`, styles: [color.green] });
 };
 
 const warning = (message) => {
-  log({ text: `WARNING 〉 ${message}`, styles: [color.yellow, style.bold] });
+  log({ text: `WARNING 〉 ${message}`, styles: [color.yellow] });
 };
 
 const error = (message) => {
-  log({ text: `ERROR 〉 ${message}`, styles: [color.red, style.bold] });
+  log({ text: `ERROR 〉 ${message}`, styles: [color.red] });
 };
 
 const separator = (char = '-', length = 10) => {
@@ -71,4 +72,8 @@ const separator = (char = '-', length = 10) => {
   log({ text: separatorText, styles: [] });
 };
 
-module.exports = { log, info, success, warning, error, separator };
+
+
+
+module.exports = { log, info, success, warning, error, separator, color, style, bg };
+
