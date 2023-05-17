@@ -1,6 +1,6 @@
 {
   "name": "generic-logs",
-  "version": "2.7.0",
+  "version": "3.4.0",
   "description": "Un paquete que modifica visualmente los registros para facilitar la resolución de errores ",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/yosseferrazik/generic-logs/issues"
   },
-  "homepage": "https://github.com/yosseferrazik/generic-logs#readme",
-  "dependencies": {
-    "dayjs": "^1.11.7"
-  }
+  "homepage": "https://github.com/yosseferrazik/generic-logs#readme"
 }
