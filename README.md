@@ -12,81 +12,84 @@ npm install generic-logs
 ```
 ## Uso
 
-Ejemplo :
+Ejemplos :
 ```js
-const log = require('generic-logs');
+const generic = require('generic-logs')
 
-log({ text: 'Hola', styles: [color.blue , style.bold , style.underscore ] });
+generic.info('Mensaje de información');
+generic.success('Mensaje de éxito');
+generic.warning('Mensaje de advertencia');
+generic.error('Mensaje de error');
+
+generic.separator(); // Separador por defecto: '----------'
+
+console.log(generic.red('Este texto es rojo'));
+console.log(generic.blue('Este texto es azul'));
+console.log(generic.magenta('Este texto es magenta'));
+console.log(generic.white('Este texto es blanco'));
+console.log(generic.black('Este texto es negro'));
+
+console.log(generic.bgred('El fondo de este texto es rojo'));
+console.log(generic.bgblue('El fondo de este texto azul'));
+console.log(generic.bgmagenta('El fondo de este texto magenta'));
+console.log(generic.bgwhite('El fondo de este texto blanco'));
+console.log(generic.bgblack('El fondo de este texto negro'));
+// ... y más opciones de colores
+
+custom({ title: 'Personalizado', message: 'Mensaje personalizado', color: 'green' });
+
+// Funciones adicionales de formato
+console.log(bold('Texto en negrita'));
+console.log(italic('Texto en cursiva'));
+console.log(underscore('Texto subrayado'));
+// ... y más opciones de formato
+
 ```
-## Documentacion
 ### Lista de estilos 
 
-#### **style**
-- reset
-- bold
-- dim
-- italic
-- underscore
-- reverse
-- backoneline
-- strikethrough
-- cleanthisline
+| Color de texto | Fondo del texto | Estilos           |
+|----------------|-----------------|-------------------|
+| `cyan()`       | `bgcyan()`      | `reset()`         |
+| `blue()`       | `bgblue()`      | `bold()`          |
+| `red()`        | `bgred()`       | `underscore()`    |
+| `white()`      | `bgwhite()`     | `dim()`           |
+| `black()`      | `bgblack()`     | `italic()`        |
+| `magenta()`    | `bgmagenta()`   | `backoneline()`   |
+| `yellow()`     | `bgyellow()`    | `strikethrough()` |
+| `green()`      | `bggreen()`     | `reverse()`       |
 
-#### **bg** (background)
-- black
-- red
-- green
-- yellow
-- blue
-- magenta
-- cyan
-- white
+## `custom({title,text,colors})`
+Crea tu propio log
 
-#### **color**
-- black
-- red
-- yellow
-- green
-- white
-- magenta
-- cyan
-- blue
-
-
-### `log(options)`
-La función log permite enviar un mensaje en la consola con estilos personalizados.
-
-**Parámetros:** Options: Un objeto con las siguientes propiedades:
-- Text (string): El texto del mensaje.
-- Styles (array): Un array con los estilos.
+- Title: El titulo `String`
+- Text: Texto despues del titulo `String`
+- Color: Color del texto `String`
 ```js
-log({ text: 'Hola', styles: [color.yellow, style.underscore] });
+generic.custom({ title: 'Personalizado', message: 'Mensaje personalizado', color: 'verde' });
 ```
-## Logs Predefinidos
-El paquete también proporciona algunas funciones para logs predefinidos que pueden ser útiles:
 
-## **INFO** `info(message)`
+## `info(message)`
 Muestra un mensaje de información.
 ```js
-log.info('Información importante');
+generic.info('Información importante');
 ```
-## **WARNING** `warning(message)`
+## `warning(message)`
 Muestra un mensaje de advertencia.
 ```js
-log.warning('Advertencia');
+generic.warning('Advertencia');
 ```
-## **SUCCESS** `success(message)`
+## `success(message)`
 Muestra un mensaje de exito
 ```js
-log.success('¡¡Eureka!!');
+generic.success('¡¡Eureka!!');
 ```
-## **ERROR** `error(message)`
+## `error(message)`
 Muestra un mensaje de error
 ```js
-log.error('Error encontrado');
+generic.error('Error encontrado');
 ```
 
-## **SEPARATOR** `separator(char, length)`
+## `separator(char, length)`
 
 Separator es una funcion que crea un separador visual en la consola.
 
@@ -96,9 +99,9 @@ Separator es una funcion que crea un separador visual en la consola.
 Ejemplo
 
 ```js
-log.separator(); // Separador predeterminado
-log.separator('*', 20); // Separador personalizado con longitud 20 y carácter '*'
-log.separator('~', 15); // Separador personalizado con longitud 15 y carácter '~'
+generic.separator(); // Separador predeterminado
+generic.separator('*', 20); // Separador personalizado con longitud 20 y carácter '*'
+generic.separator('~', 15); // Separador personalizado con longitud 15 y carácter '~'
 ```
 
 # Contribución
@@ -120,3 +123,4 @@ Si deseas contribuir a este proyecto, puedes seguir los pasos a continuación:
 **Abre una pull request en GitHub.**
 # Licencia
 Este proyecto está licenciado bajo la  GENERAL PUBLIC LICENSE. Para más detalles, consulta el archivo LICENSE.
+
