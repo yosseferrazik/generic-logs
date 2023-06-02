@@ -138,14 +138,13 @@ Si deseas contribuir a este proyecto, puedes seguir los pasos a continuación:
     git checkout -b mi-nueva-funcion.
     ```
 -   Realiza los cambios necesarios. Una vez hechos actualiza la definición de tipos:
+    ```bash
+    # Instala TSC si no lo tienes
+    npm i -g typescript
 
-```bash
-# Instala TSC si no lo tienes
-npm i -g typescript
-
-# Genera la definición de tipos
-npm run types
-```
+    # Genera la definición de tipos
+    npm run types
+    ```
 
 -   Realiza los commits:
     ```bash
